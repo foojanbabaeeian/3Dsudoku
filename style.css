@@ -1,0 +1,53 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#sudoku-container {
+    width: 540px; /* Adjust width to fit the grid */
+    height: 540px; /* Adjust height to fit the grid */
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(9, 1fr);
+    gap: 1px;
+    perspective: 800px; /* Add perspective for 3D effect */
+}
+
+.cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    transition: transform 0.3s ease; /* Add transition for hover effect */
+}
+
+.cell:hover {
+    transform: translateY(-2px); /* Add translation for hover effect */
+}
+
+.cell.invalid {
+    background-color: #ffcccc;
+}
+
+.cell.input-cell {
+    cursor: pointer;
+}
+
+.cell.input-cell:hover {
+    background-color: #f0f0f0;
+}
+
+.cell.selected {
+    background-color: #e6f7ff;
+}
